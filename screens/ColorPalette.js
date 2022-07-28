@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, StyleSheet, FlatList} from 'react-native';
+import {StyleSheet, FlatList} from 'react-native';
 import ColorBox from '../components/ColorBox';
 
 const ColorPalette = ({route}) => {
@@ -8,11 +8,10 @@ const ColorPalette = ({route}) => {
     <FlatList
       style={styles.container}
       data={colors}
-      keyExtractor={item => item.hexCode}
+      keyExtractor={item => item.colorName}
       renderItem={({item}) => (
         <ColorBox hexCode={item.hexCode} colorName={item.colorName} />
       )}
-      ListHeaderComponent={<Text style={styles.heading}>Solarized</Text>}
     />
   );
 };
@@ -20,11 +19,6 @@ const ColorPalette = ({route}) => {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-  },
-  heading: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 10,
   },
 });
 

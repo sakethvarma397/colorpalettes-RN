@@ -9,7 +9,7 @@ const PalettePreview = ({onPress, colorPalette}) => {
       <FlatList
         style={styles.list}
         data={colorPalette.colors.slice(0, 5)}
-        keyExtractor={item => item.paletteName}
+        keyExtractor={item => item.colorName}
         renderItem={({item}) => (
           <View style={[styles.color, {backgroundColor: item.hexCode}]} />
         )}
